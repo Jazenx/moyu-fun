@@ -1,0 +1,28 @@
+@function px2rem($px) {
+	$rem: 37.5;
+	@return ($px/$rem/2) + rem;
+}
+
+@function halfpx($px) {
+	@return $px / 2 + px;
+}
+
+@function ipad_px2rem($px) {
+	$rem: 37.5 * 2048 / 750;
+	@return ($px/$rem/2) + rem;
+}
+
+@function x15($num) {
+	@return $num * 1.5 / 2 + px;
+}
+
+@mixin scolling {
+	-webkit-overflow-scrolling: touch;
+}
+
+@mixin numberOfLines($number) {
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $number;
+	display: -webkit-box;
+	overflow: hidden;
+}
