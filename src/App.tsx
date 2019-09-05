@@ -1,13 +1,17 @@
 import React from 'react'
-import { Button } from '@material-ui/core'
+import { Provider } from 'react-redux'
+import configStore from './redux/store'
+import rootSaga from './redux/sagas/index'
+import AppRouter from './routes/index'
+
+const store = configStore()
+store.runSaga(rootSaga)
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <Button variant="contained" color="primary">
-        你好，世界
-      </Button>
-    </div>
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
   )
 }
 
