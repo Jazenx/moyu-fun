@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="logo192.png" />
@@ -22,20 +22,13 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
     <script>
-      ;(function(doc, win) {
-        var docEl = doc.documentElement,
-          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-          recalc = function() {
-            var clientWidth = docEl.clientWidth
-            if (!clientWidth) return
-            docEl.style.fontSize = 37.5 * (clientWidth / 375) + 'px'
-          }
-
-        if (!doc.addEventListener) return
-        win.addEventListener(resizeEvt, recalc, false)
-        doc.addEventListener('DOMContentLoaded', recalc, false)
-      })(document, window)
+      window.onload = function() {
+        window.viewportUnitsBuggyfill.init({
+          hacks: window.viewportUnitsBuggyfillHacks
+        })
+      }
     </script>
   </head>
   <body>
