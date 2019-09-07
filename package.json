@@ -16,6 +16,9 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.4.0",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.3.3",
+    "@material-ui/system": "^4.3.3",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.3",
     "@types/react": "16.9.2",
@@ -29,6 +32,8 @@
     "react-scripts": "3.1.1",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",
+    "styled-components": "^4.3.2",
+    "styled-system": "^5.1.1",
     "typeface-roboto": "^0.0.75",
     "typescript": "3.6.2"
   },
@@ -39,6 +44,7 @@
     "@storybook/addon-links": "^5.1.11",
     "@storybook/addons": "^5.1.11",
     "@storybook/react": "^5.1.11",
+    "@types/styled-components": "^4.1.18",
     "commitizen": "^4.0.3",
     "cssnano": "^4.1.10",
     "cssnano-preset-advanced": "^4.0.7",

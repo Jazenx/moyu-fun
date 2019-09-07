@@ -2,8 +2,8 @@ import React, { Suspense, lazy } from 'react'
 import Loading from '../components/Loading'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
+const AsyncMoyuView = lazy(() => import(/* webpackChunkName: "user" */ './../views/moyu'))
 const AsyncLoginView = lazy(() => import(/* webpackChunkName: "login" */ './../views/login'))
-
 const AsyncUserView = lazy(() => import(/* webpackChunkName: "user" */ './../views/user'))
 
 interface IRoutes {
@@ -13,6 +13,12 @@ interface IRoutes {
 }
 
 const routes = [
+  {
+    path: '/',
+    exact: true,
+    key: 'moyu',
+    component: AsyncMoyuView
+  },
   {
     path: '/login',
     key: 'login',
@@ -30,7 +36,7 @@ const AppRouter = () => (
     <Suspense fallback={<Loading />}>
       <Switch>
         {routes.map(router => (
-          <Route key={router.key} path={router.path} component={router.component} />
+          <Route key={router.key} exact={router.exact} path={router.path} component={router.component} />
         ))}
       </Switch>
     </Suspense>

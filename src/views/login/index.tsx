@@ -4,7 +4,7 @@ import './test.css'
 const Login: React.FC = () => {
   return (
     <div className="Login">
-      <div className="test">123</div>
+      <div className="test">我是个粉刷匠</div>
       <Button variant="contained" color="secondary">
         Login
       </Button>
